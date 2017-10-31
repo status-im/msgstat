@@ -3,20 +3,20 @@ Msgstat
 Msgstat provides a CLI tool which analyses status-go log files and generates corresponding output of information
 related to messages delivered over whisper (either rpc or p2p).
 
-## Commands
+## Usage
 
-### `read`
+Msgstat provides the processing functionality for the processing of all log files which would be used to produced aggregated collection of message delivery facts.
 
-The command `read` provides the processing functionality for the processing of all log files which would be used to produced aggregated collection of message delivery facts.
-
-The `read` command expects processing data to be delivered either through sending given logs through `stdin` or through the use of the `file` flag.
+It by defaults expects processing data to be delivered either through sending given logs through `stdin` or through the use of the `file` flag.
 
 - Processing log lines through stdin
+
 ```bash
-> cat ./logs/status-im/status-go/11.21.2017.log | msgstat read
+> cat ./logs/status-im/status-go/11.21.2017.log | msgstat
 ```
 
 - Processing log lines from a file
+
 ```bash
 > msgstat read -file=./logs/status-im/status-go/11.21.2017.log
 ```

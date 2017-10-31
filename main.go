@@ -110,21 +110,10 @@ Msgstat processes status-go lines to generate useful message delivery facts.
 
 EXAMPLES:
 
-  1. Read from stdin
-
-    cat ./statusim/status.log | msgstat read
-
-  2. Read from file
-
-    msgstat read -file=./statusim/status.log
-
-  3. Read from file and write to output file
-
-    msgstat read -file=./statusim/status.log -out=./processed-log.json
-
-  4. Read from file and write in yaml format
-
-    msgstat read -format=yaml -file=./statusim/status.log -out=./processed-log.json
+  cat status.log | msgstat                                  # read from stdin
+  msgstat -file=status.log                                  # read from file
+  msgstat -file=status.log -out=proc.json                   # read from file and write to output file
+  msgstat -format=yaml -file=status.log -out=proc.json      # read from file and write in yaml format
 
 FLAGS:
 
