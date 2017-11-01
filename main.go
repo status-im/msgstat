@@ -77,7 +77,7 @@ func main() {
 		rc = ioutil.NopCloser(os.Stdin)
 	}
 
-	if err := stats.AggregateLogs(rc, wc, *format); err != nil {
+	if err := stats.ReadAggregates(rc, wc, *format); err != nil {
 		log.Fatalf("Failed to process logs successfully: %v", err)
 		return
 	}

@@ -44,14 +44,15 @@ type AggregatedMessage struct {
 	Request    whisper.NewMessage `json:"request" toml:"request" yaml:"request" csv:"request"`
 }
 
-// ReadAggregate processes incoming data from the reader and writes appropriate
+// ReadAggregates processes incoming data from the reader and writes appropriate
 // data with respect to format required.
-func ReadAggregate(r io.ReadCloser, w io.WriteCloser, format string) error {
+func ReadAggregates(r io.ReadCloser, w io.WriteCloser, format string) error {
 	defer w.Close()
 	defer r.Close()
 
 	format = strings.ToLower(format)
 
+	var order []string
 	aggregates := make(map[string]AggregatedMessage)
 
 	bufReader := bufio.NewReader(r)
@@ -101,6 +102,8 @@ func ReadAggregate(r io.ReadCloser, w io.WriteCloser, format string) error {
 			msgAggr.Request = message.Source
 			msgAggr.FromDevice = message.FromDevice
 			msgAggr.ToDevice = message.ToDevice
+
+			order = append(order, message.Hash)
 		}
 
 		// This should be impossible, but skip any whoes Envelope hash matches but
@@ -186,7 +189,9 @@ func ReadAggregate(r io.ReadCloser, w io.WriteCloser, format string) error {
 		aggregates[message.Hash] = msgAggr
 	}
 
-	for _, aggr := range aggregates {
+	for _, hash := range order {
+		aggr := aggregates[hash]
+
 		switch format {
 		case "toml":
 			if err := toml.NewEncoder(w).Encode(aggr); err != nil {
