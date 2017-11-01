@@ -54,12 +54,12 @@ Msgstat currently outputs parsed message into the following format:
 
 ```json
 {
-  "envelope_hash": "#4T0NEM0Qrcm1uVVhBVmhYYW9HS1AwQ01xWmhwQmJGSDBnOHZpWnN2",
+  "protocol": "RPC",
+  "envelope": "#4T0NEM0Qrcm1uVVhBVmhYYW9HS1AwQ01xWmhwQmJGSDBnOHZpWnN2",
   "from_device": "4T0NEM0Qrcm1uVVhBVmhYYW9HS1A",
-  "to": "4T0NEM0Qrcm1uVVhBVmhYYW9HS1A",
-  "protocol": "rpc",
+  "to_device": "4T0NEM0Qrcm1uVVhBVmhYYW9HS1A",
   "time": 2010-11-12,
-  "delivery_timeline": [
+  "timelines": [
     {
       "time_stamp": "2010-11-12 10:20:100T34343",
       "status": "pending"
@@ -72,25 +72,4 @@ Msgstat currently outputs parsed message into the following format:
   ],
   "payload": "Thunder crash",
 }
-
-{
-  "envelope_hash": "#4T0NEM0Qrcm1uVVhBVmhYYW9HS1AwQ01xWmhwQmJGSDBnOHZpWnN2",
-  "from_device": "4T0NEM0Qrcm1uVVhBVmhYYW9HS1A",
-  "to": "4T0NEM0Qrcm1uVVhBVmhYYW9HS1A",
-  "protocol": "rpc",
-  "time": 2010-11-12,
-  "status-diffs": [
-    {
-      "time_stamp": "2010-11-12 10:20:100T34343",
-      "status": "pending"
-    },
-    {
-      "time_stamp": "2010-11-12 3:20:100T34343",
-      "status": "rejected",
-      "reason": "Failed to locate peer"
-    }
-  ],
-  "payload": "Thunder crash",
-}
-
 ```
