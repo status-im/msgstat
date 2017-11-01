@@ -1,0 +1,90 @@
+INFO [10-31|14:57:12] start Manager                            geth=StatusIM
+INFO [10-31|14:57:12] starting transaction queue               geth=StatusIM
+INFO [10-31|14:57:12] Starting peer-to-peer node               instance=StatusIM/v0.9.9-unstable/darwin-amd64/go1.9
+INFO [10-31|14:57:12] Allocated cache and file handles         database=/Users/darkvoid/devlabs/src/github.com/status-im/status-go/e2e/.ethereumtest/StatusChain/StatusIM/lightchaindata cache=16 handles=16
+INFO [10-31|14:57:12] Initialised chain configuration          config="{ChainID: 777 Homestead: 0 DAO: <nil> DAOSupport: true EIP150: <nil> EIP155: 0 EIP158: 0 Byzantium: 0 Engine: unknown}"
+INFO [10-31|14:57:12] Disk storage enabled for ethash caches   dir=/Users/darkvoid/devlabs/src/github.com/status-im/status-go/e2e/.ethereumtest/StatusChain/StatusIM/ethash count=3
+INFO [10-31|14:57:12] Disk storage enabled for ethash DAGs     dir=/Users/darkvoid/.ethash                                                                                  count=2
+INFO [10-31|14:57:12] Loaded most recent local header          number=0 hash=28c4da…6d219c td=1048576
+INFO [10-31|14:57:12] StatusIM: backend service inited
+INFO [10-31|14:57:12] Starting P2P networking
+WARN [10-31|14:57:12] Light client mode is an experimental feature
+INFO [10-31|14:57:12] RLPx listener up                         self="enode://81f711f04d42dd4ca04bb96a1dc06abba8b2ba98055f2d79a81bff64fc332aea13bd507dcde48e94923b99cbf4af627c14dfc78dc19a3494a601f5b8449b7cfd@[::]:60940?discport=0"
+INFO [10-31|14:57:12] started whisper v.5.0
+INFO [10-31|14:57:12] Notification received                    geth=StatusIM event="{\"type\":\"node.started\",\"event\":{}}"
+INFO [10-31|14:57:12] Registered handler                       geth=StatusIM fn=TransactionQueueHandler
+INFO [10-31|14:57:12] Registered handler                       geth=StatusIM fn=TransactionReturnHandler
+INFO [10-31|14:57:12] Account reselected                       geth=StatusIM
+INFO [10-31|14:57:12] Notification received                    geth=StatusIM event="{\"type\":\"node.ready\",\"event\":{}}"
+INFO [10-31|14:57:13] Whisper identity added                   id=88a3aa8244e5deacfd1803881b1b2bb0d7174ef55b635674e119e93f27305563 pubkey=0x0490161b00f2c47542d28c2e8908e77159b1720dccceb6393d7c001850122efc3b1709bcea490fd8f5634ba1a145aa0722d86b9330b0e39a8d493cb981fd459da2
+INFO [10-31|14:57:13] Message delivery notification            geth=StatusIM state=eyJ0eXBlIjoiT3V0Z29pbmdNZXNzYWdlIiwicHJvdG9jb2wiOiJSUEMiLCJzdGF0dXMiOiJQZW5kaW5nIiwiZW52ZWxvcGUiOm51bGwsImVudmVsb3BlX2hhc2giOiIweDE1Njc4OWE3ODkyY2ZhNWI1YTQ1Y2E5ZjMxODc3OTlkMmEwMjkzMDM0MTc1MDkzYWI4NzI2ZWNiZDhjYmM2YzYiLCJzb3VyY2UiOnsic3ltS2V5SUQiOiIiLCJwdWJLZXkiOiIweDA0OTAxNjFiMDBmMmM0NzU0MmQyOGMyZTg5MDhlNzcxNTliMTcyMGRjY2NlYjYzOTNkN2MwMDE4NTAxMjJlZmMzYjE3MDliY2VhNDkwZmQ4ZjU2MzRiYTFhMTQ1YWEwNzIyZDg2YjkzMzBiMGUzOWE4ZDQ5M2NiOTgxZmQ0NTlkYTIiLCJzaWciOiIiLCJ0dGwiOjIwLCJ0b3BpYyI6IjB4YjgzZjAyOGUiLCJwYXlsb2FkIjoiMHg3NDY1NzM3NDIwNmQ2NTczNzM2MTY3NjUyMDM1MjAyODIyMjIyMDJkM2UyMDRiMzEyYzIwNjU2ZTYzNzI3OTcwNzQ2NTY0MjA2MTZlNmY2ZTIwNjI3MjZmNjE2NDYzNjE3Mzc0MjkiLCJwYWRkaW5nIjoiMHgiLCJwb3dUaW1lIjoyMCwicG93VGFyZ2V0IjowLjAxLCJ0YXJnZXRQZWVyIjoiIn19
+INFO [10-31|14:57:13] Message delivery notification            geth=StatusIM state="eyJ0eXBlIjoiT3V0Z29pbmdNZXNzYWdlIiwicHJvdG9jb2wiOiJSUEMiLCJzdGF0dXMiOiJTZW50IiwiZW52ZWxvcGUiOiJCQnBzQkExYmdEVzV1MkNJVi94ckZXL2k4RVBuZmRscHZsQnJza251MDd2WVVwYTV0Z09zVVlHYW5pY2JmNTI3aThIOVJkU1hEbVlITkh5cmpFUjkvaUJIK3BsVktxZjBPZjB5UTJUSkhwdmZJa1FPVVdYNHc3RDRNZk5mV2FVMnBEd3YyUFBuN1Y1Y2g0SXhPTmo4eGJxcDI4TEJxKzM4ZnMwcWhvQmM1S1k3M3J2dE9TbDZtdnRUVnBoNkRDbFBFUDhNc1Nqb2gwWGpHVy95WE56QXlsVDgzZ2c3bXRUa2NZd1dGYUh5OThFeVdZVUxYOVhwU3lCRVVVVUNuRllFaEQ1dWcwWlJGcmNpbTdvUE54NkVmVWVIbnN5Vy8rL2RRUW9RTHFyOCtZb0RSWlFWUk1VQ0lGcG1hQUVlY0FJL1ZBUjBobE5Ha1dqRmNCZDc1Y2V3SGcyb1lrbis4K0JQN20ybC9BSnZNQjhSTFVubWZaQTdXZTlCclJzOWpRSmRiYkpqQnBkWmFTaktGaFQrU2J4b1YvaFpZaG5hRVQ0Mmc2SWo4d3dYRkRzTXJOeDJaSVBHMTBGYXZtNmNCZTVoMm54djBOeWR1ZmkvdnhWWmk0bkVPUmRqbkNEUWZYWm9EWm9RMEl6b0tTeVciLCJ0aW1lIjoxNTA5NDU4MjMzLCJlbnZlbG9wZV9oYXNoIjoiMHg1NWJjMjJiZTRiMWE0MTk0YWZkODkzZWU2M2QwNWY1ODJiMGMwMTE5NzhiZDM5MTNhZWE3ZWJiODI3OGZjMGRiIiwic291cmNlIjp7InN5bUtleUlEIjoiIiwicHViS2V5IjoiMHgwNDkwMTYxYjAwZjJjNDc1NDJkMjhjMmU4OTA4ZTc3MTU5YjE3MjBkY2NjZWI2MzkzZDdjMDAxODUwMTIyZWZjM2IxNzA5YmNlYTQ5MGZkOGY1NjM0YmExYTE0NWFhMDcyMmQ4NmI5MzMwYjBlMzlhOGQ0OTNjYjk4MWZkNDU5ZGEyIiwic2lnIjoiIiwidHRsIjoyMCwidG9waWMiOiIweGI4M2YwMjhlIiwicGF5bG9hZCI6IjB4NzQ2NTczNzQyMDZkNjU3MzczNjE2NzY1MjAzNTIwMjgyMjIyMjAyZDNlMjA0YjMxMmMyMDY1NmU2MzcyNzk3MDc0NjU2NDIwNjE2ZTZmNmUyMDYyNzI2ZjYxNjQ2MzYxNzM3NDI5IiwicGFkZGluZyI6IjB4IiwicG93VGltZSI6MjAsInBvd1RhcmdldCI6MC4wMSwidGFyZ2V0UGVlciI6IiJ9fQ=="
+INFO [10-31|14:57:13] Message delivery notification            geth=StatusIM state=eyJ0eXBlIjoiSW5jb21pbmdNZXNzYWdlIiwicHJvdG9jb2wiOiJSUEMiLCJzdGF0dXMiOiJDYWNoZWQiLCJlbnZlbG9wZSI6IkJCcHNCQTFiZ0RXNXUyQ0lWL3hyRlcvaThFUG5mZGxwdmxCcnNrbnUwN3ZZVXBhNXRnT3NVWUdhbmljYmY1MjdpOEg5UmRTWERtWUhOSHlyakVSOS9pQkgrcGxWS3FmME9mMHlRMlRKSHB2ZklrUU9VV1g0dzdENE1mTmZXYVUycER3djJQUG43VjVjaDRJeE9Oajh4YnFwMjhMQnErMzhmczBxaG9CYzVLWTczcnZ0T1NsNm12dFRWcGg2RENsUEVQOE1zU2pvaDBYakdXL3lYTnpBeWxUODNnZzdtdFRrY1l3V0ZhSHk5OEV5V1lVTFg5WHBTeUJFVVVVQ25GWUVoRDV1ZzBaUkZyY2ltN29QTng2RWZVZUhuc3lXLysvZFFRb1FMcXI4K1lvRFJaUVZSTVVDSUZwbWFBRWVjQUkvVkFSMGhsTkdrV2pGY0JkNzVjZXdIZzJvWWtuKzgrQlA3bTJsL0FKdk1COFJMVW5tZlpBN1dlOUJyUnM5alFKZGJiSmpCcGRaYVNqS0ZoVCtTYnhvVi9oWllobmFFVDQyZzZJajh3d1hGRHNNck54MlpJUEcxMEZhdm02Y0JlNWgybnh2ME55ZHVmaS92eFZaaTRuRU9SZGpuQ0RRZlhab0Rab1EwSXpvS1N5VyIsInRpbWUiOjE1MDk0NTgyMzMsImVudmVsb3BlX2hhc2giOiIweDU1YmMyMmJlNGIxYTQxOTRhZmQ4OTNlZTYzZDA1ZjU4MmIwYzAxMTk3OGJkMzkxM2FlYTdlYmI4Mjc4ZmMwZGIiLCJzb3VyY2UiOnsic3ltS2V5SUQiOiIiLCJwdWJLZXkiOiIweCIsInNpZyI6IiIsInR0bCI6MCwidG9waWMiOiIweDAwMDAwMDAwIiwicGF5bG9hZCI6IjB4IiwicGFkZGluZyI6IjB4IiwicG93VGltZSI6MCwicG93VGFyZ2V0IjowLCJ0YXJnZXRQZWVyIjoiIn19
+INFO [10-31|14:57:13] Message delivery notification            geth=StatusIM state="eyJ0eXBlIjoiSW5jb21pbmdNZXNzYWdlIiwicHJvdG9jb2wiOiJSUEMiLCJzdGF0dXMiOiJQcm9jZXNzaW5nIiwiZW52ZWxvcGUiOiJCQnBzQkExYmdEVzV1MkNJVi94ckZXL2k4RVBuZmRscHZsQnJza251MDd2WVVwYTV0Z09zVVlHYW5pY2JmNTI3aThIOVJkU1hEbVlITkh5cmpFUjkvaUJIK3BsVktxZjBPZjB5UTJUSkhwdmZJa1FPVVdYNHc3RDRNZk5mV2FVMnBEd3YyUFBuN1Y1Y2g0SXhPTmo4eGJxcDI4TEJxKzM4ZnMwcWhvQmM1S1k3M3J2dE9TbDZtdnRUVnBoNkRDbFBFUDhNc1Nqb2gwWGpHVy95WE56QXlsVDgzZ2c3bXRUa2NZd1dGYUh5OThFeVdZVUxYOVhwU3lCRVVVVUNuRllFaEQ1dWcwWlJGcmNpbTdvUE54NkVmVWVIbnN5Vy8rL2RRUW9RTHFyOCtZb0RSWlFWUk1VQ0lGcG1hQUVlY0FJL1ZBUjBobE5Ha1dqRmNCZDc1Y2V3SGcyb1lrbis4K0JQN20ybC9BSnZNQjhSTFVubWZaQTdXZTlCclJzOWpRSmRiYkpqQnBkWmFTaktGaFQrU2J4b1YvaFpZaG5hRVQ0Mmc2SWo4d3dYRkRzTXJOeDJaSVBHMTBGYXZtNmNCZTVoMm54djBOeWR1ZmkvdnhWWmk0bkVPUmRqbkNEUWZYWm9EWm9RMEl6b0tTeVciLCJ0aW1lIjoxNTA5NDU4MjMzLCJlbnZlbG9wZV9oYXNoIjoiMHg1NWJjMjJiZTRiMWE0MTk0YWZkODkzZWU2M2QwNWY1ODJiMGMwMTE5NzhiZDM5MTNhZWE3ZWJiODI3OGZjMGRiIiwic291cmNlIjp7InN5bUtleUlEIjoiIiwicHViS2V5IjoiMHgiLCJzaWciOiIiLCJ0dGwiOjAsInRvcGljIjoiMHgwMDAwMDAwMCIsInBheWxvYWQiOiIweCIsInBhZGRpbmciOiIweCIsInBvd1RpbWUiOjAsInBvd1RhcmdldCI6MCwidGFyZ2V0UGVlciI6IiJ9fQ=="
+INFO [10-31|14:57:13] Message delivery notification            geth=StatusIM state=eyJ0eXBlIjoiSW5jb21pbmdNZXNzYWdlIiwicHJvdG9jb2wiOiJSUEMiLCJzdGF0dXMiOiJRdWV1ZWQiLCJlbnZlbG9wZSI6IkJCcHNCQTFiZ0RXNXUyQ0lWL3hyRlcvaThFUG5mZGxwdmxCcnNrbnUwN3ZZVXBhNXRnT3NVWUdhbmljYmY1MjdpOEg5UmRTWERtWUhOSHlyakVSOS9pQkgrcGxWS3FmME9mMHlRMlRKSHB2ZklrUU9VV1g0dzdENE1mTmZXYVUycER3djJQUG43VjVjaDRJeE9Oajh4YnFwMjhMQnErMzhmczBxaG9CYzVLWTczcnZ0T1NsNm12dFRWcGg2RENsUEVQOE1zU2pvaDBYakdXL3lYTnpBeWxUODNnZzdtdFRrY1l3V0ZhSHk5OEV5V1lVTFg5WHBTeUJFVVVVQ25GWUVoRDV1ZzBaUkZyY2ltN29QTng2RWZVZUhuc3lXLysvZFFRb1FMcXI4K1lvRFJaUVZSTVVDSUZwbWFBRWVjQUkvVkFSMGhsTkdrV2pGY0JkNzVjZXdIZzJvWWtuKzgrQlA3bTJsL0FKdk1COFJMVW5tZlpBN1dlOUJyUnM5alFKZGJiSmpCcGRaYVNqS0ZoVCtTYnhvVi9oWllobmFFVDQyZzZJajh3d1hGRHNNck54MlpJUEcxMEZhdm02Y0JlNWgybnh2ME55ZHVmaS92eFZaaTRuRU9SZGpuQ0RRZlhab0Rab1EwSXpvS1N5VyIsInRpbWUiOjE1MDk0NTgyMzMsImVudmVsb3BlX2hhc2giOiIweDU1YmMyMmJlNGIxYTQxOTRhZmQ4OTNlZTYzZDA1ZjU4MmIwYzAxMTk3OGJkMzkxM2FlYTdlYmI4Mjc4ZmMwZGIiLCJzb3VyY2UiOnsic3ltS2V5SUQiOiIiLCJwdWJLZXkiOiIweCIsInNpZyI6IiIsInR0bCI6MCwidG9waWMiOiIweDAwMDAwMDAwIiwicGF5bG9hZCI6IjB4IiwicGFkZGluZyI6IjB4IiwicG93VGltZSI6MCwicG93VGFyZ2V0IjowLCJ0YXJnZXRQZWVyIjoiIn19
+INFO [10-31|14:57:13] Message delivery notification            geth=StatusIM state=eyJ0eXBlIjoiSW5jb21pbmdNZXNzYWdlIiwicHJvdG9jb2wiOiJSUEMiLCJzdGF0dXMiOiJEZWxpdmVyZWQiLCJlbnZlbG9wZSI6IkJCcHNCQTFiZ0RXNXUyQ0lWL3hyRlcvaThFUG5mZGxwdmxCcnNrbnUwN3ZZVXBhNXRnT3NVWUdhbmljYmY1MjdpOEg5UmRTWERtWUhOSHlyakVSOS9pQkgrcGxWS3FmME9mMHlRMlRKSHB2ZklrUU9VV1g0dzdENE1mTmZXYVUycER3djJQUG43VjVjaDRJeE9Oajh4YnFwMjhMQnErMzhmczBxaG9CYzVLWTczcnZ0T1NsNm12dFRWcGg2RENsUEVQOE1zU2pvaDBYakdXL3lYTnpBeWxUODNnZzdtdFRrY1l3V0ZhSHk5OEV5V1lVTFg5WHBTeUJFVVVVQ25GWUVoRDV1ZzBaUkZyY2ltN29QTng2RWZVZUhuc3lXLysvZFFRb1FMcXI4K1lvRFJaUVZSTVVDSUZwbWFBRWVjQUkvVkFSMGhsTkdrV2pGY0JkNzVjZXdIZzJvWWtuKzgrQlA3bTJsL0FKdk1COFJMVW5tZlpBN1dlOUJyUnM5alFKZGJiSmpCcGRaYVNqS0ZoVCtTYnhvVi9oWllobmFFVDQyZzZJajh3d1hGRHNNck54MlpJUEcxMEZhdm02Y0JlNWgybnh2ME55ZHVmaS92eFZaaTRuRU9SZGpuQ0RRZlhab0Rab1EwSXpvS1N5VyIsInRpbWUiOjE1MDk0NTgyMzMsInBheWxvYWQiOiJkR1Z6ZENCdFpYTnpZV2RsSURVZ0tDSWlJQzArSUVzeExDQmxibU55ZVhCMFpXUWdZVzV2YmlCaWNtOWhaR05oYzNRcCIsImVudmVsb3BlX2hhc2giOiIweDU1YmMyMmJlNGIxYTQxOTRhZmQ4OTNlZTYzZDA1ZjU4MmIwYzAxMTk3OGJkMzkxM2FlYTdlYmI4Mjc4ZmMwZGIiLCJ0b19kZXZpY2UiOiIweDA0OTAxNjFiMDBmMmM0NzU0MmQyOGMyZTg5MDhlNzcxNTliMTcyMGRjY2NlYjYzOTNkN2MwMDE4NTAxMjJlZmMzYjE3MDliY2VhNDkwZmQ4ZjU2MzRiYTFhMTQ1YWEwNzIyZDg2YjkzMzBiMGUzOWE4ZDQ5M2NiOTgxZmQ0NTlkYTIiLCJzb3VyY2UiOnsic3ltS2V5SUQiOiIiLCJwdWJLZXkiOiIweCIsInNpZyI6IiIsInR0bCI6MCwidG9waWMiOiIweDAwMDAwMDAwIiwicGF5bG9hZCI6IjB4IiwicGFkZGluZyI6IjB4IiwicG93VGltZSI6MCwicG93VGFyZ2V0IjowLCJ0YXJnZXRQZWVyIjoiIn19
+INFO [10-31|14:57:14] stop Manager                             geth=StatusIM
+INFO [10-31|14:57:14] stopping transaction queue               geth=StatusIM
+INFO [10-31|14:57:14] transaction queue's enqueue loop stopped geth=StatusIM
+INFO [10-31|14:57:14] transaction queue's eviction loop stopped geth=StatusIM
+INFO [10-31|14:57:14] finally stopped transaction queue        geth=StatusIM
+INFO [10-31|14:57:14] Blockchain manager stopped
+INFO [10-31|14:57:14] Stopping light Ethereum protocol
+INFO [10-31|14:57:14] Light Ethereum protocol stopped
+INFO [10-31|14:57:14] Transaction pool stopped
+INFO [10-31|14:57:14] Database closed                          database=/Users/darkvoid/devlabs/src/github.com/status-im/status-go/e2e/.ethereumtest/StatusChain/StatusIM/lightchaindata
+INFO [10-31|14:57:14] whisper stopped
+INFO [10-31|14:57:14] Node is stopped                          geth=StatusIM
+INFO [10-31|14:57:14] Ready to reset node                      geth=StatusIM
+INFO [10-31|14:57:14] Node manager resets node params          geth=StatusIM
+INFO [10-31|14:57:14] Notification received                    geth=StatusIM event="{\"type\":\"node.stopped\",\"event\":{}}"
+INFO [10-31|14:57:14] Node manager notifed app, that node has stopped geth=StatusIM
+INFO [10-31|14:57:14] Starting peer-to-peer node               instance=StatusIM/v0.9.9-unstable/darwin-amd64/go1.9
+INFO [10-31|14:57:14] Allocated cache and file handles         database=/Users/darkvoid/devlabs/src/github.com/status-im/status-go/e2e/.ethereumtest/StatusChain/StatusIM/lightchaindata cache=16 handles=16
+INFO [10-31|14:57:14] Initialised chain configuration          config="{ChainID: 777 Homestead: 0 DAO: <nil> DAOSupport: true EIP150: <nil> EIP155: 0 EIP158: 0 Byzantium: 0 Engine: unknown}"
+INFO [10-31|14:57:14] Disk storage enabled for ethash caches   dir=/Users/darkvoid/devlabs/src/github.com/status-im/status-go/e2e/.ethereumtest/StatusChain/StatusIM/ethash count=3
+INFO [10-31|14:57:14] Disk storage enabled for ethash DAGs     dir=/Users/darkvoid/.ethash                                                                                  count=2
+INFO [10-31|14:57:14] Loaded most recent local header          number=0 hash=28c4da…6d219c td=1048576
+INFO [10-31|14:57:14] StatusIM: backend service inited
+INFO [10-31|14:57:14] Starting P2P networking
+INFO [10-31|14:57:14] started whisper v.5.0
+WARN [10-31|14:57:14] Light client mode is an experimental feature
+INFO [10-31|14:57:14] RLPx listener up                         self="enode://81f711f04d42dd4ca04bb96a1dc06abba8b2ba98055f2d79a81bff64fc332aea13bd507dcde48e94923b99cbf4af627c14dfc78dc19a3494a601f5b8449b7cfd@[::]:60941?discport=0"
+INFO [10-31|14:57:14] Notification received                    geth=StatusIM event="{\"type\":\"node.started\",\"event\":{}}"
+INFO [10-31|14:57:15] Whisper identity selected                id=698906413609521ffd8a71bca94f5481521f4c0aa17b6b1317e75e182951d3bc key=0x04ec38d54e5825a594118ef710a6c2de3437f0f21be209f84a04cee321551485f61db0897ac57e40e5a5369b0c8ac0de9ce111e3341de5b1a766d2a3d98cf61631
+INFO [10-31|14:57:15] Blockchain manager stopped
+INFO [10-31|14:57:15] Stopping light Ethereum protocol
+INFO [10-31|14:57:15] Light Ethereum protocol stopped
+INFO [10-31|14:57:15] Transaction pool stopped
+INFO [10-31|14:57:15] Database closed                          database=/Users/darkvoid/devlabs/src/github.com/status-im/status-go/e2e/.ethereumtest/StatusChain/StatusIM/lightchaindata
+INFO [10-31|14:57:15] whisper stopped
+INFO [10-31|14:57:16] Node is stopped                          geth=StatusIM
+INFO [10-31|14:57:16] Ready to reset node                      geth=StatusIM
+INFO [10-31|14:57:16] Node manager resets node params          geth=StatusIM
+INFO [10-31|14:57:16] Notification received                    geth=StatusIM event="{\"type\":\"node.stopped\",\"event\":{}}"
+INFO [10-31|14:57:16] Node manager notifed app, that node has stopped geth=StatusIM
+INFO [10-31|14:57:16] Starting peer-to-peer node               instance=StatusIM/v0.9.9-unstable/darwin-amd64/go1.9
+INFO [10-31|14:57:16] Allocated cache and file handles         database=/Users/darkvoid/devlabs/src/github.com/status-im/status-go/e2e/.ethereumtest/StatusChain/StatusIM/lightchaindata cache=16 handles=16
+INFO [10-31|14:57:16] Initialised chain configuration          config="{ChainID: 777 Homestead: 0 DAO: <nil> DAOSupport: true EIP150: <nil> EIP155: 0 EIP158: 0 Byzantium: 0 Engine: unknown}"
+INFO [10-31|14:57:16] Disk storage enabled for ethash caches   dir=/Users/darkvoid/devlabs/src/github.com/status-im/status-go/e2e/.ethereumtest/StatusChain/StatusIM/ethash count=3
+INFO [10-31|14:57:16] Disk storage enabled for ethash DAGs     dir=/Users/darkvoid/.ethash                                                                                  count=2
+INFO [10-31|14:57:16] Loaded most recent local header          number=0 hash=28c4da…6d219c td=1048576
+INFO [10-31|14:57:17] StatusIM: backend service inited
+INFO [10-31|14:57:17] Starting P2P networking
+WARN [10-31|14:57:17] Light client mode is an experimental feature
+INFO [10-31|14:57:17] started whisper v.5.0
+INFO [10-31|14:57:17] RLPx listener up                         self="enode://81f711f04d42dd4ca04bb96a1dc06abba8b2ba98055f2d79a81bff64fc332aea13bd507dcde48e94923b99cbf4af627c14dfc78dc19a3494a601f5b8449b7cfd@[::]:60942?discport=0"
+INFO [10-31|14:57:17] Notification received                    geth=StatusIM event="{\"type\":\"node.started\",\"event\":{}}"
+INFO [10-31|14:57:18] Whisper identity added                   id=9197a25ae0a0c40e949d88df083c45225e7aa2d428a6014a88035dc54f1381c2 pubkey=0x04eedbaafd6adf4a9233a13e7b1c3c14461fffeba2e9054b8d456ce5f6ebeafadcbf3dce3716253fbc391277fa5a086b60b283daf61fb5b1f26895f456c2f31ae3
+INFO [10-31|14:57:18] Whisper identity added                   id=88a3aa8244e5deacfd1803881b1b2bb0d7174ef55b635674e119e93f27305563 pubkey=0x0490161b00f2c47542d28c2e8908e77159b1720dccceb6393d7c001850122efc3b1709bcea490fd8f5634ba1a145aa0722d86b9330b0e39a8d493cb981fd459da2
+INFO [10-31|14:57:18] Blockchain manager stopped
+INFO [10-31|14:57:18] Stopping light Ethereum protocol
+INFO [10-31|14:57:18] Light Ethereum protocol stopped
+INFO [10-31|14:57:18] Transaction pool stopped
+INFO [10-31|14:57:18] Database closed                          database=/Users/darkvoid/devlabs/src/github.com/status-im/status-go/e2e/.ethereumtest/StatusChain/StatusIM/lightchaindata
+INFO [10-31|14:57:18] whisper stopped
+INFO [10-31|14:57:19] Node is stopped                          geth=StatusIM
+INFO [10-31|14:57:19] Ready to reset node                      geth=StatusIM
+INFO [10-31|14:57:19] Node manager resets node params          geth=StatusIM
+INFO [10-31|14:57:19] Notification received                    geth=StatusIM event="{\"type\":\"node.stopped\",\"event\":{}}"
+INFO [10-31|14:57:19] Node manager notifed app, that node has stopped geth=StatusIM

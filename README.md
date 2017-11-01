@@ -59,7 +59,7 @@ Msgstat currently outputs parsed message into the following format:
   "to": "4T0NEM0Qrcm1uVVhBVmhYYW9HS1A",
   "protocol": "rpc",
   "time": 2010-11-12,
-  "status-diffs": [
+  "delivery_timeline": [
     {
       "time_stamp": "2010-11-12 10:20:100T34343",
       "status": "pending"
