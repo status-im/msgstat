@@ -18,32 +18,35 @@ import (
 )
 
 var (
-	messageHeader = regexp.MustCompile(`INFO \[\d+-\d+\|\d+:\d+:\d+\]\sMessage delivery notification`)
+	messageHeader   = regexp.MustCompile(`INFO \[\d+-\d+\|\d+:\d+:\d+\]\sMessage delivery notification`)
+	incomingMessage = "IncomingMessage"
+	outgoingMessage = "OutgoingMessage"
 )
 
 // Timeline contains timeline and status string for an aggregated message.
 type Timeline struct {
 	When   time.Time `json:"when" toml:"when" yaml:"when" csv:"when"`
-	Error  error     `json:"reason,omitempty" toml:"error" yaml:"error" csv:"error"`
 	Status string    `json:"status" toml:"status" yaml:"status" csv:"status"`
+	Error  string    `json:"reason,omitempty" toml:"reason,omitempty" yaml:"error,omitempty" csv:"error,omitempty"`
 }
 
 // AggregatedMessage contains aggregated facts for a given message envelope and it's total
 // transition.
 type AggregatedMessage struct {
-	Envelope   string              `json:"envelope" toml:"envelope" yaml:"envelope" csv:"envelope"`
-	Protocol   string              `json:"protocol" toml:"protocol" yaml:"protocol" csv:"protocol"`
-	FromDevice string              `json:"from_device" toml:"from_device" yaml:"from_device" csv:"from_device"`
-	ToDevice   string              `json:"to_device" toml:"to_device" yaml:"to_device" csv:"to_device"`
-	Payload    string              `json:"payload" toml:"payload" yaml:"payload" csv:"payload"`
-	Sent       time.Time           `json:"sent" toml:"sent" yaml:"sent" csv:"sent"`
-	Timelines  []Timeline          `json:"timeline" toml:"timeline" yaml:"timeline" csv:"timeline"`
-	Request    *whisper.NewMessage `json:"request" toml:"request" yaml:"request" csv:"request"`
+	Envelope   string             `json:"envelope" toml:"envelope" yaml:"envelope" csv:"envelope"`
+	Protocol   string             `json:"protocol" toml:"protocol" yaml:"protocol" csv:"protocol"`
+	FromDevice string             `json:"from_device" toml:"from_device" yaml:"from_device" csv:"from_device"`
+	ToDevice   string             `json:"to_device" toml:"to_device" yaml:"to_device" csv:"to_device"`
+	Payload    string             `json:"payload" toml:"payload" yaml:"payload" csv:"payload"`
+	Direction  string             `json:"direction" toml:"direction" yaml:"direction" csv:"direction"`
+	Sent       time.Time          `json:"sent" toml:"sent" yaml:"sent" csv:"sent"`
+	Timelines  []Timeline         `json:"timeline" toml:"timeline" yaml:"timeline" csv:"timeline"`
+	Request    whisper.NewMessage `json:"request" toml:"request" yaml:"request" csv:"request"`
 }
 
-// AggregateLogs processes incoming data from the reader and writes appropriate
+// ReadAggregate processes incoming data from the reader and writes appropriate
 // data with respect to format required.
-func AggregateLogs(r io.ReadCloser, w io.WriteCloser, format string) error {
+func ReadAggregate(r io.ReadCloser, w io.WriteCloser, format string) error {
 	defer w.Close()
 	defer r.Close()
 
@@ -91,25 +94,50 @@ func AggregateLogs(r io.ReadCloser, w io.WriteCloser, format string) error {
 		msgAggr, ok := aggregates[message.Hash]
 		if !ok {
 			msgAggr.Envelope = message.Hash
+			msgAggr.Direction = message.Type
 			msgAggr.Protocol = message.Protocol
 			msgAggr.Sent = time.Unix(int64(message.TimeSent), 0)
+			msgAggr.Payload = string(message.Payload)
+			msgAggr.Request = message.Source
+			msgAggr.FromDevice = message.FromDevice
+			msgAggr.ToDevice = message.ToDevice
 		}
 
 		// This should be impossible, but skip any whoes Envelope hash matches but
 		// has different protocols.
-		if ok && msgAggr.Protocol != message.Protocol && msgAggr.Envelope == message.Hash {
+		if ok && msgAggr.Protocol != message.Protocol && msgAggr.Envelope != message.Hash {
 			continue
 		}
 
-		if message.Type == "IncomingMessage" {
-			msgAggr.Request = &message.Source
-			msgAggr.FromDevice = message.FromDevice
-			msgAggr.ToDevice = message.ToDevice
-			msgAggr.Payload = string(message.Payload)
+		if message.Type == outgoingMessage {
+			if msgAggr.ToDevice == "" {
+				msgAggr.ToDevice = message.ToDevice
+			}
+
+			if msgAggr.FromDevice == "" {
+				msgAggr.FromDevice = message.FromDevice
+			}
+
+			if msgAggr.Payload == "" {
+				msgAggr.Payload = string(message.Payload)
+			}
 		}
 
 		switch message.Status {
+		case "Pending":
+			if message.Type == outgoingMessage {
+				msgAggr.Request = message.Source
+			}
+
+			msgAggr.Timelines = append(msgAggr.Timelines, Timeline{
+				Status: "Pending",
+				When:   message.Received,
+			})
 		case "Sent":
+			if message.Type == outgoingMessage {
+				msgAggr.Request = message.Source
+			}
+
 			msgAggr.Timelines = append(msgAggr.Timelines, Timeline{
 				Status: "Sent",
 				When:   message.Received,
@@ -129,11 +157,6 @@ func AggregateLogs(r io.ReadCloser, w io.WriteCloser, format string) error {
 				Status: "Cached",
 				When:   message.Received,
 			})
-		case "Pending":
-			msgAggr.Timelines = append(msgAggr.Timelines, Timeline{
-				Status: "Pending",
-				When:   message.Received,
-			})
 		case "Delivered":
 			if msgAggr.ToDevice == "" {
 				msgAggr.ToDevice = message.ToDevice
@@ -151,7 +174,7 @@ func AggregateLogs(r io.ReadCloser, w io.WriteCloser, format string) error {
 			msgAggr.Timelines = append(msgAggr.Timelines, Timeline{
 				Status: "Rejected",
 				When:   message.Received,
-				Error:  message.RejectionReason,
+				Error:  message.RejectionError,
 			})
 		case "Processing":
 			msgAggr.Timelines = append(msgAggr.Timelines, Timeline{

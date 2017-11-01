@@ -19,8 +19,8 @@ var (
 )
 
 var (
-	sourceFile = flag.String("out", "", "output file to save processed data into")
-	targetFile = flag.String("file", "", "input file containing status-go logs")
+	sourceFile = flag.String("file", "", "input file containing status-go logs")
+	targetFile = flag.String("out", "", "output file to save processed data into")
 	format     = flag.String("format", "json", "format of output data. -format=json|yaml|csv")
 	version    = flag.Bool("v", false, "Print version")
 )
@@ -52,7 +52,7 @@ func main() {
 	var wc io.WriteCloser
 
 	if *targetFile != "" {
-		targetOutputFile, err := os.Open(*targetFile)
+		targetOutputFile, err := os.Create(*targetFile)
 		if err != nil {
 			log.Fatalf("Failed to open output file %+q: %v", *targetFile, err)
 			return
