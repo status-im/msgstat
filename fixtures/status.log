@@ -30,8 +30,6 @@ INFO [11-01|15:35:29] whisper stopped
 INFO [11-01|15:35:30] Node is stopped                          geth=StatusIM
 INFO [11-01|15:35:30] Ready to reset node                      geth=StatusIM
 INFO [11-01|15:35:30] Node manager resets node params          geth=StatusIM
---- PASS: TestEncryptedAnonymousMessage (2.69s)
-=== RUN   TestJailWhisper
 INFO [11-01|15:35:30] Notification received                    geth=StatusIM event="{\"type\":\"node.stopped\",\"event\":{}}"
 INFO [11-01|15:35:30] Node manager notifed app, that node has stopped geth=StatusIM
 INFO [11-01|15:35:30] initializing transaction queue           geth=StatusIM
