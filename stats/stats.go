@@ -5,7 +5,6 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"io"
-	"log"
 	"regexp"
 	"strconv"
 	"strings"
@@ -109,7 +108,6 @@ func parseLogReader(r io.ReadCloser) ([]AggregatedMessage, error) {
 				break
 			}
 
-			log.Printf("Error occured while reading from Reader: %+q", err)
 			return nil, err
 		}
 
@@ -120,13 +118,11 @@ func parseLogReader(r io.ReadCloser) ([]AggregatedMessage, error) {
 
 		dataLog, err := decodeLogLine(logLine)
 		if err != nil {
-			log.Printf("Error occured while parsing logline: %+q, %+q", err, logLine)
 			continue
 		}
 
 		var message common.MessageState
 		if err := json.Unmarshal([]byte(dataLog), &message); err != nil {
-			log.Printf("Error occured while unmarshaling logline to common.Message: %+q, %+q", err, dataLog)
 			continue
 		}
 
