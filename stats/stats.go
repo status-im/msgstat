@@ -223,7 +223,7 @@ func parseLogReader(r io.ReadCloser) ([]AggregatedMessage, error) {
 		aggregates[message.Hash] = msgAggr
 	}
 
-	messages := make([]AggregatedMessage, len(order))
+	messages := make([]AggregatedMessage, 0, len(order))
 	for _, hash := range order {
 		messages = append(messages, aggregates[hash])
 	}

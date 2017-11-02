@@ -20,7 +20,7 @@ func TestAggregationReadToJSON(t *testing.T) {
 	t.Logf("Should have succesfully opened log file")
 
 	var buf bytes.Buffer
-	if err := stats.ReadAggregates(reader, &wopCloser{&buf}, "json"); err != nil {
+	if err := stats.ReadAggregates(reader, &writeCloser{&buf}, "json"); err != nil {
 		t.Fatalf("Should have succesfully processed log data")
 	}
 	t.Logf("Should have succesfully processed log data")
@@ -49,7 +49,7 @@ func TestAggregationReadToTOML(t *testing.T) {
 	t.Logf("Should have succesfully opened log file")
 
 	var buf bytes.Buffer
-	if err := stats.ReadAggregates(reader, &wopCloser{&buf}, "toml"); err != nil {
+	if err := stats.ReadAggregates(reader, &writeCloser{&buf}, "toml"); err != nil {
 		t.Fatalf("Should have succesfully processed log data")
 	}
 	t.Logf("Should have succesfully processed log data")
@@ -78,7 +78,7 @@ func TestAggregationReadToYAML(t *testing.T) {
 	t.Logf("Should have succesfully opened log file")
 
 	var buf bytes.Buffer
-	if err := stats.ReadAggregates(reader, &wopCloser{&buf}, "yaml"); err != nil {
+	if err := stats.ReadAggregates(reader, &writeCloser{&buf}, "yaml"); err != nil {
 		t.Fatalf("Should have succesfully processed log data")
 	}
 	t.Logf("Should have succesfully processed log data")
@@ -97,11 +97,13 @@ func TestAggregationReadToYAML(t *testing.T) {
 	t.Logf("Should have succesfully matched aggregated data with expected data")
 }
 
-type wopCloser struct {
+// writeCloser provides a decorator which adds a `Close` method to a composed io.Writer.
+// It implements the io.WriteCloser interface.
+type writeCloser struct {
 	io.Writer
 }
 
 // Close does nothing.
-func (wopCloser) Close() error {
+func (writeCloser) Close() error {
 	return nil
 }
