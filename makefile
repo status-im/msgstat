@@ -1,4 +1,4 @@
-.PHONY: ckeab
+.PHONY: clean
 
 GOBIN = build/bin
 GO ?= lastest
