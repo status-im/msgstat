@@ -1,0 +1,26 @@
+notifications:
+  email: false
+
+language: go
+
+go:
+  - 1.9
+  - 1.8
+  - 1.7
+
+sudo: false
+
+dist: trust
+
+install:
+  - go get golang.org/x/tools/cmd/cover
+  - make lint-deps
+
+jobs:
+  include:
+    - stage: Code Lint
+      script: make lint
+    - stage: Code Coverage
+      script: make test-coverage
+    - stage: Code Test
+      script: make test-units
