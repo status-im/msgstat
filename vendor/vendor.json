@@ -1,0 +1,43 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "bwXmO4BI1yeNTrRT5763lvCJXXU=",
+			"path": "github.com/status-im/status-go/extkeys",
+			"revision": "116f770e1d542ef4464e1b7688493743c5263ef7",
+			"revisionTime": "2017-11-01T14:29:07Z"
+		},
+		{
+			"checksumSHA1": "O2y7GAiRIBJ0NguS1fjeRZLI2O0=",
+			"path": "github.com/status-im/status-go/geth/common",
+			"revision": "116f770e1d542ef4464e1b7688493743c5263ef7",
+			"revisionTime": "2017-11-01T14:29:07Z"
+		},
+		{
+			"checksumSHA1": "ri+msbhZYNhV4EQPWLwVTlfjcaw=",
+			"path": "github.com/status-im/status-go/geth/log",
+			"revision": "116f770e1d542ef4464e1b7688493743c5263ef7",
+			"revisionTime": "2017-11-01T14:29:07Z"
+		},
+		{
+			"checksumSHA1": "cMRjwrLEYlO/Lt64flgAW9SEtaA=",
+			"path": "github.com/status-im/status-go/geth/params",
+			"revision": "116f770e1d542ef4464e1b7688493743c5263ef7",
+			"revisionTime": "2017-11-01T14:29:07Z"
+		},
+		{
+			"checksumSHA1": "F/4ebJqSRPA8a/b/CR6Go39fe/U=",
+			"path": "github.com/status-im/status-go/geth/rpc",
+			"revision": "116f770e1d542ef4464e1b7688493743c5263ef7",
+			"revisionTime": "2017-11-01T14:29:07Z"
+		},
+		{
+			"checksumSHA1": "snDyUEQ1i1EDZh+KcPMhdA3oEGI=",
+			"path": "github.com/status-im/status-go/static",
+			"revision": "116f770e1d542ef4464e1b7688493743c5263ef7",
+			"revisionTime": "2017-11-01T14:29:07Z"
+		}
+	],
+	"rootPath": "github.com/status-im/msgstat"
+}
