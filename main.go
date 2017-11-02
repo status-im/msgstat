@@ -76,18 +76,17 @@ func main() {
 
 // printVersion prints corresponding build getVersion with associated build stamp and git commit if provided.
 func printVersion() {
-	var vers []string
-	vers = append(vers, version)
+	fragments := []string{version}
 
 	if buildStamp != "" {
-		vers = append(vers, fmt.Sprintf("build#%s", buildStamp))
+		fragments = append(fragments, fmt.Sprintf("build#%s", buildStamp))
 	}
 
 	if gitCommit != "" {
-		vers = append(vers, fmt.Sprintf("git#%s", gitCommit))
+		fragments = append(fragments, fmt.Sprintf("git#%s", gitCommit))
 	}
 
-	fmt.Fprint(os.Stdout, strings.Join(vers, " "))
+	fmt.Fprint(os.Stdout, strings.Join(fragments, " "))
 }
 
 // printUsage prints out usage message for CLI tool.
