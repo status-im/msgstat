@@ -10,6 +10,8 @@ import (
 	"github.com/status-im/msgstat/stats"
 )
 
+// TestAggregationReadToJSON validates the generation of aggregation data into
+// json and it's output format.
 func TestAggregationReadToJSON(t *testing.T) {
 	reader, err := os.Open("../fixtures/status.log")
 	if err != nil {
@@ -37,6 +39,8 @@ func TestAggregationReadToJSON(t *testing.T) {
 	t.Logf("Should have succesfully matched aggregated data with expected data")
 }
 
+// TestAggregationReadToTOML validates the generation of aggregation data into
+// toml and it's output format.
 func TestAggregationReadToTOML(t *testing.T) {
 	reader, err := os.Open("../fixtures/status.log")
 	if err != nil {
@@ -64,6 +68,8 @@ func TestAggregationReadToTOML(t *testing.T) {
 	t.Logf("Should have succesfully matched aggregated data with expected data")
 }
 
+// TestAggregationReadToYAML validates the generation of aggregation data into
+// yaml and it's output format.
 func TestAggregationReadToYAML(t *testing.T) {
 	reader, err := os.Open("../fixtures/status.log")
 	if err != nil {
