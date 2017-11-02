@@ -4,7 +4,6 @@ import (
 	"flag"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"os"
 	"strings"
@@ -25,15 +24,6 @@ var (
 	version    = flag.Bool("v", false, "Print version")
 )
 
-type wopCloser struct {
-	io.Writer
-}
-
-// Close does nothing.
-func (wopCloser) Close() error {
-	return nil
-}
-
 func main() {
 	flag.Usage = printUsage
 	flag.Parse()
@@ -49,7 +39,8 @@ func main() {
 		return
 	}
 
-	var wc io.WriteCloser
+	rc := io.ReadCloser(os.Stdin)
+	wc := io.WriteCloser(os.Stdout)
 
 	if *targetFile != "" {
 		targetOutputFile, err := os.Create(*targetFile)
@@ -59,11 +50,7 @@ func main() {
 		}
 
 		wc = targetOutputFile
-	} else {
-		wc = wopCloser{Writer: os.Stdout}
 	}
-
-	var rc io.ReadCloser
 
 	if *sourceFile != "" {
 		targetInputFile, err := os.OpenFile(*sourceFile, os.O_RDONLY, 0700)
@@ -73,8 +60,6 @@ func main() {
 		}
 
 		rc = targetInputFile
-	} else {
-		rc = ioutil.NopCloser(os.Stdin)
 	}
 
 	if err := stats.ReadAggregates(rc, wc, *format); err != nil {
@@ -89,6 +74,7 @@ func main() {
 	}
 }
 
+// printVersion prints corresponding build version with associated build stamp and git commit if provided.
 func printVersion() {
 	var vers []string
 	vers = append(vers, versionStamp)
@@ -104,6 +90,7 @@ func printVersion() {
 	fmt.Fprint(os.Stdout, strings.Join(vers, " "))
 }
 
+// printUsage prints out usage message for CLI tool.
 func printUsage() {
 	fmt.Fprintf(os.Stdout, `Usage: msgstat [options]
 Msgstat processes status-go lines to generate useful message delivery facts.
@@ -131,12 +118,9 @@ FLAGS:
 func hasIncomingData() bool {
 	stat, err := os.Stdin.Stat()
 	if err != nil {
+		log.Printf("Error: unable to retrieve `stat` for os.Stdin: %+q", err)
 		return false
 	}
 
-	if stat.Size() == 0 {
-		return false
-	}
-
-	return true
+	return stat.Size() > 0
 }
