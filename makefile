@@ -30,7 +30,7 @@ help: ##@tasks Show this help
 	@perl -e '$(HELP_FUN)' $(MAKEFILE_LIST)
 
 build: ##@tasks Build msgstat binary into build/bin
-	go build -o $(GOBON)/msgstat -v ./
+	go build -o $(GOBIN)/msgstat -v ./
 
 ci: lint test-coverage test-units ##@tasks Runs code linting, code coverage and tests for project
 
