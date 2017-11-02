@@ -12,24 +12,24 @@ import (
 )
 
 var (
-	gitCommit    = ""      // rely on linker: -ldflags -X main.gitCommit"
-	buildStamp   = ""      // rely on linker: -ldflags -X main.buildStamp"
-	versionStamp = "0.0.1" // rely on linker -ldflags -X main.versionStamp"
+	version    = "0.0.1" // rely on linker -ldflags -X main.version"
+	gitCommit  = ""      // rely on linker: -ldflags -X main.gitCommit"
+	buildStamp = ""      // rely on linker: -ldflags -X main.buildStamp"
 )
 
 var (
 	sourceFile = flag.String("file", "", "input file containing status-go logs")
 	targetFile = flag.String("out", "", "output file to save processed data into")
 	format     = flag.String("format", "json", "format of output data. -format=json|yaml|csv")
-	version    = flag.Bool("v", false, "Print version")
+	getVersion = flag.Bool("v", false, "Print getVersion")
 )
 
 func main() {
 	flag.Usage = printUsage
 	flag.Parse()
 
-	// if we are to print version.
-	if *version {
+	// if we are to print getVersion.
+	if *getVersion {
 		printVersion()
 		return
 	}
@@ -74,10 +74,10 @@ func main() {
 	}
 }
 
-// printVersion prints corresponding build version with associated build stamp and git commit if provided.
+// printVersion prints corresponding build getVersion with associated build stamp and git commit if provided.
 func printVersion() {
 	var vers []string
-	vers = append(vers, versionStamp)
+	vers = append(vers, version)
 
 	if buildStamp != "" {
 		vers = append(vers, fmt.Sprintf("build#%s", buildStamp))
