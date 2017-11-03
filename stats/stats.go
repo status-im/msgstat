@@ -19,7 +19,6 @@ import (
 
 var (
 	messageHeader   = regexp.MustCompile(`INFO \[\d+-\d+\|\d+:\d+:\d+\]\sMessage delivery notification`)
-	incomingMessage = "IncomingMessage"
 	outgoingMessage = "OutgoingMessage"
 )
 
@@ -94,7 +93,7 @@ func ReadAggregates(r io.ReadCloser, w io.WriteCloser, format string) error {
 
 // parseLogReader parses out all log messages and returns associated AggregatedMessages
 // or returns error if encountered.
-func parseLogReader(r io.ReadCloser) ([]AggregatedMessage, error) {
+func parseLogReader(r io.Reader) ([]AggregatedMessage, error) {
 	var order []string
 	aggregates := make(map[string]AggregatedMessage)
 
